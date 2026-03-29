@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>ApexBuilder.Program</StartupObject>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>ApexBuilder</RootNamespace>
+    <AssemblyName>ApexBuilder_v3_Expert</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Management" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\GhostTemplate.cs" />
+    <EmbeddedResource Include="Templates\PhantomTemplate.cs" />
+    <EmbeddedResource Include="Source\icon.ico" Condition="Exists('Source\icon.ico')" />
+  </ItemGroup>
+</Project>
